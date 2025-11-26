@@ -1,0 +1,38 @@
+# Build artifacts
+build/
+devel/
+install/
+
+# ROS logs
+*.log
+*.log.*
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Temporary files
+*.tmp
+*.bak
+
+# Sensor data files
+*.bag
+*.pcd
+*.csv
+
+# Node modules (if any)
+node_modules/
+
+# Backup files
+*~
