@@ -1,0 +1,139 @@
+<launch>
+  <!-- Please Use Sensor Ip According To Your Setup-->
+  <arg name="Right_Sensor_IP"       default="169.254.10.206" />
+  <arg name="Left_Sensor_IP"        default="169.254.10.209" />
+  <arg name="Front_Sensor_IP"       default="169.254.3.10" />
+  <!-- ==================================================== -->
+  <!-- Important parameter to inform data destination for SICK -->
+  <arg name="host_ip_right"         default="169.254.172.176" />    
+   <!-- Important parameter to inform data destination for SICK -->
+  <arg name="host_ip_left"          default="169.254.172.176" />   
+  <!-- Important parameter to inform data destination \ SICK -->
+  <arg name="host_ip_front"        default="169.254.172.176" />  
+  <!--TF Frames-->  
+  <arg name="RightFrame_id"         default="laser_right" />        <!-- Important parameter for TF Tree -->
+  <arg name="LeftFrame_id"          default="laser_left" />         <!-- Important parameter for TF Tree -->
+  <arg name="FrontFrame_id"         default="laser_center" />       <!-- Important parameter for TF Tree -->
+  
+  <!--===================Uncomment for debug================-->
+
+  <!-- <arg name="RightFrame_id"         default="scan"/>             
+  <arg name="LeftFrame_id"          default="scan"/>             
+  <arg name="FrontFrame_id"         default="scan"/>              -->
+  
+  <!-- ==================================================== -->
+
+  <!-- ===============Parameters not tamper with=========== -->
+  <arg name="channel"               default="1" />
+  <arg name="channel_enabled"       default="True" />
+  <arg name="general_system_state"  default="True" />
+  <arg name="derived_settings"      default="True" />
+  <arg name="measurement_data"      default="True" />
+  <arg name="intrusion_data"        default="True" />
+  <arg name="application_io_data"   default="True" />
+  <arg name="use_persistent_config" default="False" />
+  <!-- ==================================================== -->
+
+  <!-- ===================Config if needed================= -->
+  <arg name="interface_ip"          default="0.0.0.0" />
+  <arg name="host_udp_port"         default="0" />
+  <arg name="skip"                  default="1" />
+  <arg name="angle_start"           default="0" />
+  <arg name="angle_end"             default="0" />
+  <arg name="time_offset"           default="0.0" />
+  <arg name="min_intensities"       default="0.0" doc="minimal intensity for a laserscan point" />
+  <!-- ==================================================== -->
+
+
+  <!-- Launch Sick SickSafetyscanners Ros Driver Node's -->
+  <!-- ========================= Right Safety Lidar ======================== -->
+    <node pkg="sick_safetyscanners" type="sick_safetyscanners_node" name="right_sick_node" output="screen" ns="Right/Sick" >
+      <param name="sensor_ip"              type="string" value="$(arg Right_Sensor_IP)" />
+      <param name="host_ip"                type="string" value="$(arg host_ip_right)" />
+      <param name="interface_ip"           type="string" value="$(arg interface_ip)" />
+      <param name="host_udp_port"          type="int"    value="$(arg host_udp_port)" />
+      <param name="frame_id"               type="string" value="$(arg RightFrame_id)" />
+      <param name="skip"                   type="int"    value="$(arg skip)" />
+      <param name="angle_start"            type="double" value="$(arg angle_start)" />
+      <param name="angle_end"              type="double" value="$(arg angle_end)" />
+      <param name="time_offset"            type="double" value="$(arg time_offset)" />
+      <param name="min_intensities"        type="double" value="$(arg min_intensities)" />
+      <param name="channel"                type="int"    value="$(arg channel)" />
+      <param name="channel_enabled"        type="bool"   value="$(arg channel_enabled)" />
+      <param name="general_system_state"   type="bool"   value="$(arg general_system_state)" />
+      <param name="derived_settings"       type="bool"   value="$(arg derived_settings)" />
+      <param name="measurement_data"       type="bool"   value="$(arg measurement_data)" />
+      <param name="intrusion_data"         type="bool"   value="$(arg intrusion_data)" />
+      <param name="application_io_data"    type="bool"   value="$(arg application_io_data)" />
+      <param name="use_persistent_config"  type="bool"   value="$(arg use_persistent_config)" />
+    </node>
+  <!-- ===================================================================== -->
+
+  <!-- ========================= Left Safety Lidar ======================== -->
+    <node pkg="sick_safetyscanners" type="sick_safetyscanners_node" name="left_sick_node" output="screen" ns="Left/Sick">
+      <param name="sensor_ip"              type="string" value="$(arg Left_Sensor_IP)" />
+      <param name="host_ip"                type="string" value="$(arg host_ip_left)" />
+      <param name="interface_ip"           type="string" value="$(arg interface_ip)" />
+      <param name="host_udp_port"          type="int"    value="$(arg host_udp_port)" />
+      <param name="frame_id"               type="string" value="$(arg LeftFrame_id)" />
+      <param name="skip"                   type="int"    value="$(arg skip)" />
+      <param name="angle_start"            type="double" value="$(arg angle_start)" />
+      <param name="angle_end"              type="double" value="$(arg angle_end)" />
+      <param name="time_offset"            type="double" value="$(arg time_offset)" />
+      <param name="min_intensities"        type="double" value="$(arg min_intensities)" />
+      <param name="channel"                type="int"    value="$(arg channel)" />
+      <param name="channel_enabled"        type="bool"   value="$(arg channel_enabled)" />
+      <param name="general_system_state"   type="bool"   value="$(arg general_system_state)" />
+      <param name="derived_settings"       type="bool"   value="$(arg derived_settings)" />
+      <param name="measurement_data"       type="bool"   value="$(arg measurement_data)" />
+      <param name="intrusion_data"         type="bool"   value="$(arg intrusion_data)" />
+      <param name="application_io_data"    type="bool"   value="$(arg application_io_data)" />
+      <param name="use_persistent_config"  type="bool"   value="$(arg use_persistent_config)" />
+    </node>
+  <!-- ===================================================================== -->
+
+  <!-- ========================= Front Safety Lidar ======================== -->
+    <!-- <node pkg="sick_safetyscanners" type="sick_safetyscanners_node" name="front_sick_node" output="screen" ns="Front/Sick" >
+      <param name="sensor_ip"              type="string" value="$(arg Front_Sensor_IP)" />
+      <param name="host_ip"                type="string" value="$(arg host_ip_front)" />
+      <param name="interface_ip"           type="string" value="$(arg interface_ip)" />
+      <param name="host_udp_port"          type="int"    value="$(arg host_udp_port)" />
+      <param name="frame_id"               type="string" value="$(arg FrontFrame_id)" />
+      <param name="skip"                   type="int"    value="$(arg skip)" />
+      <param name="angle_start"            type="double" value="$(arg angle_start)" />
+      <param name="angle_end"              type="double" value="$(arg angle_end)" />
+      <param name="time_offset"            type="double" value="$(arg time_offset)" />
+      <param name="min_intensities"        type="double" value="$(arg min_intensities)" />
+      <param name="channel"                type="int"    value="$(arg channel)" />
+      <param name="channel_enabled"        type="bool"   value="$(arg channel_enabled)" />
+      <param name="general_system_state"   type="bool"   value="$(arg general_system_state)" />
+      <param name="derived_settings"       type="bool"   value="$(arg derived_settings)" />
+      <param name="measurement_data"       type="bool"   value="$(arg measurement_data)" />
+      <param name="intrusion_data"         type="bool"   value="$(arg intrusion_data)" />
+      <param name="application_io_data"    type="bool"   value="$(arg application_io_data)" />
+      <param name="use_persistent_config"  type="bool"   value="$(arg use_persistent_config)" />
+    </node> -->
+  <!-- ===================================================================== -->
+
+  <!-- ========================= Static TF ======================== -->
+  <!--refer http://wiki.ros.org/tf2_ros -->
+  <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_laser_right"      args="-0.26 -0.54 0 -1.5708 -0.01745  3.141583   base_link laser_right" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_laser_left"       args="0.1 0.54 0 1.5708 -0.0436 3.106686  base_link laser_left" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_lidar_center"  args="0.28 0.0 0.0 3.141583 0.0 0.0 base_link laser_center"/>  -->
+  <!-- ===================================================================== -->
+
+  <!-- node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure" /-->
+ <!--refer http://wiki.ros.org/tf2_ros -->
+  <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_laser_right"      args="-0.15 -0.345 0 -3.0659 -0.0  3.145   base_link laser_right" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_laser_left"       args="-0.18 0.345 0 3.14159 -0.0 3.147  base_link laser_left" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_lidar_center"  args="0.48 0.0 0.0 0.0 0.0 3.14 base_link laser_center"/>  -->
+  
+
+
+  <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_laser_right" args="-0.30 -0.52 0 -1.525 0.0  3.141583   base_link laser_right" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_laser_left" args="0.08  0.49 0 1.5708 0.0 3.141583  base_link laser_left" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_lidar_center" args="0.28 0.0 0.0 3.141583 0.0 0.0 base_link laser_center"/>  -->
+
+<!-- ===================================================================== -->
+  <include file="$(find sick_safetyscanners)/launch/box_filter.launch" />
+</launch>

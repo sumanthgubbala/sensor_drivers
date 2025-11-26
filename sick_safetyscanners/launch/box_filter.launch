@@ -1,0 +1,36 @@
+<launch>
+
+<!-- A simple launch file for the urg_node package. -->
+
+<!--  When using an IP-connected LIDAR, populate the "ip_address" parameter with the address of the LIDAR.
+      Otherwise, leave it blank. If supported by your LIDAR, you may enable the publish_intensity
+      and/or publish_multiecho options. -->
+  <group ns="left">
+    <node pkg="laser_filters" type="scan_to_scan_filter_chain" output="screen" name="laser_filter">
+      <remap from="scan" to="/Left/Sick/scan" />
+      <remap from="scan_filtered" to="/left/left_scan" />
+      <rosparam command="load" file="$(find sick_safetyscanners)/config/left_filter.yaml" />
+    </node>
+  </group>
+
+  <group ns="right">
+    <node pkg="laser_filters" type="scan_to_scan_filter_chain" output="screen" name="laser_filter">
+      <remap from="scan" to="/Right/Sick/scan" />
+      <remap from="scan_filtered" to="/right/right_scan"/>
+      <rosparam command="load" file="$(find sick_safetyscanners)/config/right_filter.yaml" />
+    </node>
+  </group>
+  
+    <group ns="center">
+    <node pkg="laser_filters" type="scan_to_scan_filter_chain" output="screen" name="laser_filter">
+      <remap from="scan" to="/Front/Sick/scan" />
+      <remap from="scan_filtered" to="/center/center_scan"/>
+      <rosparam command="load" file="$(find sick_safetyscanners)/config/center_filter.yaml" />
+    </node>
+  </group>
+
+  <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_laser_right" args="-0.26 -0.54 0 -1.5708 -0.01745  3.141583   base_link laser_right" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_laser_left" args="0.1 0.54 0 1.5708 -0.0436 3.106686  base_link laser_left" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_lidar_center" args="0.28 0.0 0.0 3.141583 0.0 0.0 base_link laser_center"/>  -->
+
+</launch>

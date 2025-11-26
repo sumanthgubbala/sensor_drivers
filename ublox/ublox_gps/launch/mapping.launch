@@ -1,0 +1,8 @@
+<launch>
+	<include file= "$(find ublox_gps)/launch/ekf.launch"/>
+	<include file= "$(find ublox_gps)/launch/ardusimple.launch"/>
+	<!-- <include file= "$(find rslidar_pointcloud)/launch/rs_lidar_16.launch"/> -->
+    <node name="odm_node" pkg="ublox_gps" type="odom_to_pose.py" output="screen"/>
+    <!-- <node name="truck_node" pkg="gps_common" type="truck_gps_no_odom.py" output="screen"/> -->
+    
+</launch>
