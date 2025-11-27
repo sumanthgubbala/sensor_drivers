@@ -12,7 +12,7 @@ Each driver includes:
 
 ## 🔷 Livox LiDAR
 
-<p style="flux: left;"><img width="10%" src="https://www.livoxtech.com/dps/2d9e037e6d457ef7ffec037f7d16dcf8.png" /></p>
+<p style="flux: auto; justiy-contet: center;"><img width="20%" src="https://www.livoxtech.com/dps/2d9e037e6d457ef7ffec037f7d16dcf8.png" /></p>
 
 **File:**
 
@@ -59,7 +59,7 @@ sensors_drivers/livox_ros_driver2/config/MID360_config.json
 
 ## 🔷 SICK 2D LiDAR
 
-<img width="10%" src="https://cdn.sick.com/media/pim/5/15/215/IM0085215.png"/>
+<img width="20%" src="https://cdn.sick.com/media/pim/5/15/215/IM0085215.png"/>
 
 **File:**
 
@@ -70,17 +70,17 @@ sensors_drivers/livox_ros_driver2/config/MID360_config.json
 **Set:**
 
 ```xml
-    <arg name="Right_Sensor_IP"       default="169.254.X.XXX" />  <!-- Enter SICK LiDAR IP -->
-    <arg name="Left_Sensor_IP"        default="169.254.X.XXX" />  <!-- Enter SICK LiDAR IP -->
+    <arg name="Right_Sensor_IP"  default="169.254.X.XXX" />  <!-- Enter SICK LiDAR IP -->
+    <arg name="Left_Sensor_IP"  default="169.254.X.XXX" />  <!-- Enter SICK LiDAR IP -->
 
-    <arg name="host_ip_right"         default="169.254.X.XXX" />  <!-- Enter Host IP for Left/Right -->
+    <arg name="host_ip_right"  default="169.254.X.XXX" />  <!-- Enter Host IP for Left/Right -->
 ```
 
 ---
 
 ## 🔷 Ouster LiDAR
 
-<img width="10%" src="https://cdn.prod.website-files.com/64d23a301670476693286174/65511136864d515f87336dd6_ouster_os1_d9caed355c.png">
+<img width="20%" src="https://cdn.prod.website-files.com/64d23a301670476693286174/65511136864d515f87336dd6_ouster_os1_d9caed355c.png">
 
 
 
