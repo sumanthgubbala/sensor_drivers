@@ -74,6 +74,13 @@ Each driver includes:
     <arg name="Left_Sensor_IP"  default="169.254.X.XXX" />  <!-- Enter SICK LiDAR IP -->
 
     <arg name="host_ip_right"  default="169.254.X.XXX" />  <!-- Enter Host IP for Left/Right -->
+
+
+    <!-- For TF uncomment the below 3lines in the sick_safetyscanners.launch file and put the arguments   -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_laser_right" args="-0.30 -0.52 0 -1.525 0.0  3.141583   base_link laser_right" />
+    <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_laser_left" args="0.08  0.49 0 1.5708 0.0 3.141583  base_link laser_left" />
+    <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_lidar_center" args="0.28 0.0 0.0 3.141583 0.0 0.0 base_link laser_center"/> 
+
 ```
 
 ---
@@ -120,18 +127,21 @@ sensors_drivers/ouster-ros/launch/sensor.launch
 **File:**
 
 ```
-/sensors_drivers/ublox/ublox_gps/config/ardusimple_2.yaml
+/sensors_drivers/ublox/ublox_gps/config/ardusimple.yaml
 ```
 
-**Change:**
+**Changes:**
+
+- `Open a terminal`: Run this command below and look for your USB ACM device, then note down the ID (like ttyACM0)
+
+ ```bash
+    demsg --follow
+ ```
+
+ - `Open yaml file`:   Change the device parameter to match your USB ACM device (ex: /dev/ttyACM0)
 
 ```yaml
-device: /dev/ttyACM1  # Set the Udev rule for RTK device and Enter the Udev address here
-```
-
-**File:**
-```
-sensors_drivers/ublox/ublox_gps/launch/ardusimple.launch
+device: /dev/ttyACM0  # Set the Udev rule for RTK device and Enter the Udev address here
 ```
 
 
@@ -161,10 +171,27 @@ sensors_drivers/ublox/ublox_gps/launch/ardusimple.launch
 
 <img width="20%" src="https://www.mouser.in/images/marketingid/2023/img/109066689.png?v=061025.0729">
 
-**NOTE :**
+**Changes :**
 
+**1. Find device info:**
+```bash
+dmesg --follow
 ```
- No Need to Make Any Changes 
+Run this, then plug in your Xsens IMU. You'll see vendor ID, product ID, serial number, and device path (like ttyACM0). Note these values for reference.
+
+**2. Set up udev rules:**
+```bash
+sudo nano /etc/udev/rules.d/99-xsens-imu.rules
+```
+Add this line:
+```
+SUBSYSTEM=="tty", ATTRS{idVendor}=="2639", ACTION=="add", GROUP="dialout", MODE="0660"
+```
+
+**3. Apply rules:**
+```bash
+sudo udevadm control --reload-rules && sudo udevadm trigger
+sudo usermod -a -G dialout $USER
 ```
 
 
