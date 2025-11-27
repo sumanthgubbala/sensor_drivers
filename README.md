@@ -12,7 +12,7 @@ Each driver includes:
 
 ## 🔷 Livox LiDAR
 
-<p style="flux: left;"><img width="20%" src="https://www.livoxtech.com/dps/2d9e037e6d457ef7ffec037f7d16dcf8.png" /></p>
+<img width="20%" src="https://www.livoxtech.com/dps/2d9e037e6d457ef7ffec037f7d16dcf8.png" />
 
 **File:**
 
@@ -33,7 +33,7 @@ Each driver includes:
       "point_data_port": 56301,
       "imu_data_ip" : "192.168.X.XX", //Enter Host IP Here
       "imu_data_port": 56401,
-      "log_data_ip" : "92.168.X.XX",  //Enter Host IP Here
+      "log_data_ip" : "192.168.X.XX",  //Enter Host IP Here
       "log_data_port": 56501
     }
   },
@@ -54,6 +54,19 @@ Each driver includes:
   ]
 ```
 
+**Note:**
+ For multiple Livox LiDARs, copy and paste the "MID360" and "lidar_configs" sections, then change the IP address of each LiDAR according to your setup.
+
+**File:**
+```
+/sensors_drivers/livox_ros_driver2/launch_ROS1/msg_MID360.launch
+```
+
+ ```xml
+ <!-- For More Than 1 LiDAR -->
+ <arg name="multi_topic" default="0"/> <!-- Change to 1 for multiple LiDARs -->
+ ```
+
 
 ---
 
@@ -73,10 +86,11 @@ Each driver includes:
     <arg name="Right_Sensor_IP"  default="169.254.X.XXX" />  <!-- Enter SICK LiDAR IP -->
     <arg name="Left_Sensor_IP"  default="169.254.X.XXX" />  <!-- Enter SICK LiDAR IP -->
 
-    <arg name="host_ip_right"  default="169.254.X.XXX" />  <!-- Enter Host IP for Left/Right -->
+    <arg name="host_ip_right"  default="169.254.X.XXX" />  <!-- Enter Host IP for Right Sensor -->
+    <arg name="host_ip_left"  default="169.254.X.XXX" />  <!-- Enter Host IP for Left Sensor -->
 
 
-    <!-- For TF uncomment the below 3lines in the sick_safetyscanners.launch file and put the arguments   -->
+    <!-- For TF transforms, uncomment the below 3 lines in sick_safetyscanners.launch file -->
     <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_laser_right" args="-0.30 -0.52 0 -1.525 0.0  3.141583   base_link laser_right" />
     <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_laser_left" args="0.08  0.49 0 1.5708 0.0 3.141583  base_link laser_left" />
     <node pkg="tf2_ros" type="static_transform_publisher" name="base_link_to_lidar_center" args="0.28 0.0 0.0 3.141583 0.0 0.0 base_link laser_center"/> 
@@ -93,8 +107,39 @@ Each driver includes:
 
 **File:**
 ```
-sensors_drivers/ouster-ros/launch/sensor.launch
+/sensors_drivers/ouster-ros/param/params.yaml
 ```
+
+
+**For IMU Driver:**
+*See [Xsens IMU](#-xsens-imu) section below for setup instructions*
+
+
+
+```yaml
+ML:
+  XsensMtiNode:
+    port: /dev/imu_xsens   # Set Udev rule
+    publisher_queue_size: 5
+    pub_imu: true  #For getting xsens-imu data set it true
+
+
+    Ouster:
+      OsNode:
+        sensor_hostname: os-122403001858.local # Enter ouster LiDAR IP 
+        replay: true
+        metadata: /home/user/.ros/os-122403001858.local.json # Change user and LiDAR IP
+        udp_dest: 127.0.0.1 #Set your Host IP
+```
+
+**Launch File:**
+
+```bash
+
+roslaunch ouster-ros os.launch
+
+```
+
 
 
 **Key Parameters to Set:**
@@ -134,14 +179,14 @@ sensors_drivers/ouster-ros/launch/sensor.launch
 
 - `Open a terminal`: Run this command below and look for your USB ACM device, then note down the ID (like ttyACM0)
 
- ```bash
-    demsg --follow
- ```
+```bash
+dmesg --follow
+```
 
  - `Open yaml file`:   Change the device parameter to match your USB ACM device (ex: /dev/ttyACM0)
 
 ```yaml
-device: /dev/ttyACM0  # Set the Udev rule for RTK device and Enter the Udev address here
+device: /dev/ttyACM0  # Enter the device path from dmesg output
 ```
 
 
@@ -167,6 +212,7 @@ device: /dev/ttyACM0  # Set the Udev rule for RTK device and Enter the Udev addr
 
 ---
 
+<a name="xsens-imu"></a>
 ### 🔷 Xsens IMU
 
 <img width="20%" src="https://www.mouser.in/images/marketingid/2023/img/109066689.png?v=061025.0729">
