@@ -222,6 +222,8 @@ sudo usermod -a -G dialout $USER
 - `enable_gyro/enable_accel`: Enable IMU data (set to true for odometry)
 - `publish_tf`: Publish camera TF transforms (default: true)
 - `tf_prefix`: Prefix for TF frames (default: realsense)
+- `enable_sync`: Enable camera synchronization (default: false)
+- `align_depth`: Align depth frames to color camera (default: false)
 
 **Resolution Options:**
 - 640x480 (VGA)
