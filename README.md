@@ -12,12 +12,12 @@ Each driver includes:
 
 ## 🔷 Livox LiDAR
 
-<p style="flux: auto; justiy-contet: center;"><img width="20%" src="https://www.livoxtech.com/dps/2d9e037e6d457ef7ffec037f7d16dcf8.png" /></p>
+<p style="flux: left;"><img width="20%" src="https://www.livoxtech.com/dps/2d9e037e6d457ef7ffec037f7d16dcf8.png" /></p>
 
 **File:**
 
 ```
-sensors_drivers/livox_ros_driver2/config/MID360_config.json
+/sensors_drivers/livox_ros_driver2/config/MID360_config.json
 ```
 
 **Change:**
@@ -115,7 +115,7 @@ sensors_drivers/ouster-ros/launch/sensor.launch
 
 ### 🔷 GPS (u-blox F9P)
 
-<img width="10%" src="https://www.gateworks.com/wp-content/uploads/gw16143-angle-800px.png">
+<img width="20%" src="https://www.gateworks.com/wp-content/uploads/gw16143-angle-800px.png">
 
 **File:**
 
@@ -159,7 +159,7 @@ sensors_drivers/ublox/ublox_gps/launch/ardusimple.launch
 
 ### 🔷 Xsens IMU
 
-<img width="10%" src="https://www.mouser.in/images/marketingid/2023/img/109066689.png?v=061025.0729">
+<img width="20%" src="https://www.mouser.in/images/marketingid/2023/img/109066689.png?v=061025.0729">
 
 **NOTE :**
 
@@ -173,7 +173,7 @@ sensors_drivers/ublox/ublox_gps/launch/ardusimple.launch
 
 ### 🔷 RealSense Cameras
 
-<img width="10%" src="https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/3c5d6807aee4bccf8a693e04725f15f4/large.png">
+<img width="20%" src="https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/3c5d6807aee4bccf8a693e04725f15f4/large.png">
 
 **File:**
 
