@@ -1,46 +1,10 @@
-# Build artifacts
-build/
-devel/
-install/
 
-# ROS logs
-*.log
-*.log.*
 
-livox_ros_driver2
-ouster-ros
-pointcloud_to_laserscan
-realsense-ros
-sick_safetyscanners
-ublox
-xsens_mti_driver
+livox_ros_driver2/
+ouster-ros/
+pointcloud_to_laserscan/
+realsense-ros/
+sick_safetyscanners/
+ublox/
+xsens_mti_driver/
 
-# IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Python cache
-__pycache__/
-*.pyc
-*.pyo
-
-# Temporary files
-*.tmp
-*.bak
-
-# Sensor data files
-*.bag
-*.pcd
-*.csv
-
-# Node modules (if any)
-node_modules/
-
-# Backup files
-*~
