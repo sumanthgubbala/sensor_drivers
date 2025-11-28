@@ -215,7 +215,7 @@ device: /dev/ttyACM0  # Enter the device path from dmesg output
 <a name="xsens-imu"></a>
 ### 🔷 Xsens IMU
 
-<img width="20%" src="https://www.mouser.in/images/marketingid/2023/img/109066689.png?v=061025.0729">
+<img width="20%" src="https://www.mouser.in/images/marketingid/2023/img/109066689.png">
 
 **Changes :**
 
