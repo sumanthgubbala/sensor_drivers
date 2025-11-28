@@ -7,13 +7,13 @@ install/
 *.log
 *.log.*
 
-livox_ros_driver2/
-ouster-ros/
-pointcloud_to_laserscan/
-realsense-ros/
-sick_safetyscanners/
-ublox/
-xsens_mti_driver/
+livox_ros_driver2
+ouster-ros
+pointcloud_to_laserscan
+realsense-ros
+sick_safetyscanners
+ublox
+xsens_mti_driver
 
 # IDE files
 .vscode/
