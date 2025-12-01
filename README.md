@@ -42,20 +42,20 @@ Each driver includes:
       "ip" : "192.168.X.XX", //Enter LiDAR IP Here
       "pcl_data_type" : 1,
       "pattern_mode" : 0,
-      "extrinsic_parameter" : {  //Add TF information
-        "roll": 0.0,
-        "pitch": 0.0,
-        "yaw": 0.0,
-        "x": 0,
-        "y": 0,
-        "z": 0
+      "extrinsic_parameter" : {  //Add TF information (radians for rotation, meters for translation)
+        "roll": 0.0,  // radians
+        "pitch": 0.0, // radians
+        "yaw": 0.0,   // radians
+        "x": 0,       // meters
+        "y": 0,       // meters
+        "z": 0        // meters
       }
     }
   ]
 ```
 
-**Note:**
- For multiple Livox LiDARs, copy and paste the "MID360" and "lidar_configs" sections, then change the IP address of each LiDAR according to your setup.
+>**Note:**
+ For multiple Livox LiDARs, copy and paste the `MID360` and `lidar_configs` sections, then change the IP address of each LiDAR according to your setup.
 
 **File:**
 ```
@@ -135,10 +135,10 @@ ML:
 **Launch File:**
 
 ```bash
-
 roslaunch ouster-ros os.launch
-
 ```
+
+> **Note:** `os.launch` is a single self-contained file that sets up everything the Ouster sensor needs to run.
 
 
 
@@ -177,13 +177,13 @@ roslaunch ouster-ros os.launch
 
 **Changes:**
 
-- `Open a terminal`: Run this command below and look for your USB ACM device, then note down the ID (like ttyACM0)
+- `Open a terminal`: Run this command below and look for your `USB ACM device`, then note down the ID (like `ttyACM0`) - This shows live system messages so you can see when your GPS device gets plugged in
 
 ```bash
 dmesg --follow
 ```
 
- - `Open yaml file`:   Change the device parameter to match your USB ACM device (ex: /dev/ttyACM0)
+ - `Open yaml file`:   Change the device parameter to match your USB ACM device (ex: `/dev/ttyACM0`)
 
 ```yaml
 device: /dev/ttyACM0  # Enter the device path from dmesg output
@@ -192,12 +192,12 @@ device: /dev/ttyACM0  # Enter the device path from dmesg output
 
 **Key Parameters:**
 - `device`: Serial device path (set via Udev rule)
-- `frame_id`: TF frame for GPS data (default: gps)
-- `config_on_startup`: Whether to configure GPS on startup (default: false)
-- `uart1/baudrate`: Serial baud rate (default: 460800)
+- `frame_id`: TF frame for GPS data (`default: gps`)
+- `config_on_startup`: Whether to configure GPS on startup (`default: false`)
+- `uart1/baudrate`: Serial baud rate (`default: 460800`)
 - `rate`: Measurement rate in Hz
 - `nav_rate`: Navigation rate in Hz
-- `publish/all`: Publish all available GPS data (default: true)
+- `publish/all`: Publish all available GPS data (`default: true`)
 
 **Available Launch Files:**
 - `ardusimple.launch`: Basic GPS launch with configuration
@@ -223,7 +223,7 @@ device: /dev/ttyACM0  # Enter the device path from dmesg output
 ```bash
 dmesg --follow
 ```
-Run this, then plug in your Xsens IMU. You'll see vendor ID, product ID, serial number, and device path (like ttyACM0). Note these values for reference.
+>Run this, then plug in your Xsens IMU. You'll see vendor ID, product ID, serial number, and device path (`like ttyACM0`). Note these values for reference.
 
 **2. Set up udev rules:**
 ```bash
@@ -257,19 +257,19 @@ sudo usermod -a -G dialout $USER
 
 **Key Parameters to Change:**
 - `serial_no`: Camera serial number (required for multi-camera setups)
-- `camera`: Namespace for camera topics (default: camera)
-- `enable_pointcloud`: Generate point cloud data (set to true for navigation)
-- `enable_depth`: Enable depth stream (default: true)
-- `enable_color`: Enable RGB color stream (default: true)
+- `camera`: Namespace for camera topics (`default: camera`)
+- `enable_pointcloud`: Generate point cloud data (`set to true for navigation`)
+- `enable_depth`: Enable depth stream (`default: true`)
+- `enable_color`: Enable RGB color stream (`default: true`)
 - `enable_infra1/enable_infra2`: Enable infrared streams for stereo vision
-- `depth_width/depth_height`: Depth resolution (default: -1 for auto)
-- `color_width/color_height`: RGB resolution (default: -1 for auto)
-- `depth_fps/color_fps`: Frame rates (30/60 fps typical)
+- `depth_width/depth_height`: Depth resolution (`default: -1 for auto`)
+- `color_width/color_height`: RGB resolution (`default: -1 for auto`)
+- `depth_fps/color_fps`: Frame rates (`30/60` fps typical)
 - `enable_gyro/enable_accel`: Enable IMU data (set to true for odometry)
-- `publish_tf`: Publish camera TF transforms (default: true)
-- `tf_prefix`: Prefix for TF frames (default: realsense)
-- `enable_sync`: Enable camera synchronization (default: false)
-- `align_depth`: Align depth frames to color camera (default: false)
+- `publish_tf`: Publish camera TF transforms (`default: true`)
+- `tf_prefix`: Prefix for TF frames (`default: realsense`)
+- `enable_sync`: Enable camera synchronization (`default: false`)
+- `align_depth`: Align depth frames to color camera (`default: false`)
 
 **Resolution Options:**
 - 640x480 (VGA)
