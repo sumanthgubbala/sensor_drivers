@@ -1,4 +1,4 @@
-# 🔷 Livox LiDAR
+# Livox LiDAR
 <img width="20%" src="https://www.livoxtech.com/dps/2d9e037e6d457ef7ffec037f7d16dcf8.png" />
 
 **File:**
