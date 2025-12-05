@@ -8,3 +8,5 @@ sick_safetyscanners/
 ublox/
 xsens_mti_driver/
 
+.cursor/
+.vscode/
