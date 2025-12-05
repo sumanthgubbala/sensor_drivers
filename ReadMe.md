@@ -42,7 +42,7 @@ Each driver includes:
       "ip" : "192.168.X.XX", //Enter LiDAR IP Here
       "pcl_data_type" : 1,
       "pattern_mode" : 0,
-      "extrinsic_parameter" : {  //Add TF information (radians for rotation, meters for translation)
+      "extrinsic_parameter" : {  //Add TF information (Radians for rotation, meters for translation)
         "roll": 0.0,  // radians
         "pitch": 0.0, // radians
         "yaw": 0.0,   // radians
