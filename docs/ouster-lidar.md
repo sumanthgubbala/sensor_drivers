@@ -1,20 +1,21 @@
-## Ouster LiDAR
+# Ouster LiDAR
 
+## Image
 <img width="20%" src="https://cdn.prod.website-files.com/64d23a301670476693286174/65511136864d515f87336dd6_ouster_os1_d9caed355c.png">
 
 
 
-**File:**
+## File
 ```
 /sensors_drivers/ouster-ros/param/params.yaml
 ```
 
 
-**For IMU Driver:**
+## For IMU Driver 
 *See [Xsens IMU](#-xsens-imu) section below for setup instructions*
 
 
-
+## Changes 
 ```yaml
 ML:
   XsensMtiNode:
@@ -31,17 +32,18 @@ ML:
         udp_dest: 127.0.0.1 #Set your Host IP
 ```
 
-**Launch File:**
+## Launch File
 
 ```bash
 roslaunch ouster-ros os.launch
 ```
 
-> **Note:** `os.launch` is a single self-contained file that sets up everything the Ouster sensor needs to run.
+## Note:
+ `os.launch` is a single self-contained file that sets up everything the Ouster sensor needs to run.
 
 
 
-**Key Parameters to Set:**
+## Key Parameters to Set
 - `sensor_hostname`: IP address of the Ouster LiDAR sensor
 - `udp_dest`: IP address of the host computer receiving data
 - `lidar_port`: UDP port for lidar data (default: 7502)
@@ -50,7 +52,7 @@ roslaunch ouster-ros os.launch
 - `timestamp_mode`: TIME_FROM_ROS_TIME, TIME_FROM_INTERNAL_OSC, TIME_FROM_SYNC_PULSE_IN, TIME_FROM_PTP_1588
 - `viz`: Set to true to launch RViz visualization (default: true)
 
-**Optional Parameters:**
+## Optional Parameters
 - `tf_prefix`: Namespace for TF transforms
 - `sensor_frame`: TF frame name for sensor (default: os_sensor)
 - `lidar_frame`: TF frame name for lidar (default: os_lidar)
