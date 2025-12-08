@@ -77,7 +77,7 @@ average rate: 10.001
 
 #### Example Image
 
-<img src="../docs/images/ouster_hz.png" width="400">
+<img src="images/ouster_hz.png" width="400">
 
 
 The output of `rostopic hz /ML/Ouster/Points` shows how frequently the Ouster LiDAR point cloud messages are being published in ROS. The "average rate: 10.000" indicates that the LiDAR is outputting data at 10 Hz. This matches the expected rate for many Ouster sensors when set to common modes like 1024x10 (10 Hz). 
