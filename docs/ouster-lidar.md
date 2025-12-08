@@ -13,7 +13,7 @@
 ```
 
 
-## #For IMU Driver Setup
+### For IMU Driver Setup
 
 For details on configuring the IMU (Xsens), see [IMU Setup Guide](imu.md).
 
