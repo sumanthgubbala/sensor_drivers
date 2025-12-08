@@ -13,14 +13,14 @@
 ```
 
 
-## For IMU Driver Setup
+## #For IMU Driver Setup
 
 For details on configuring the IMU (Xsens), see [IMU Setup Guide](imu.md).
 
 
-## Changes 
+### Changes 
 
-### `params.yaml` configuration
+#### `params.yaml` configuration
 
 ```yaml
 ML:
@@ -44,17 +44,17 @@ ML:
 rosparam load params.yaml
 ```
 
-## Launch File
+### Launch File
 
 ```bash
 roslaunch ouster-ros os.launch
 ```
 
-## Note
+### Note
  `os.launch` is a single self-contained file that sets up everything the Ouster sensor needs to run.
 
 
-## Verfiy Ouster
+### Verfiy Ouster
 
 ```bash
 rostopic echo /ML/Ouster/Points
@@ -65,7 +65,7 @@ rostopic hz /ML/Ouster/Points
 ```
 
 
-### Sample Output of `rostopic hz /ML/Ouster/Points`
+#### Sample Output of `rostopic hz /ML/Ouster/Points`
 
 ```bash
 subscribed to [/ML/Ouster/Points]
@@ -75,7 +75,7 @@ average rate: 10.001
     min: 0.099s max: 0.102s std dev: 0.00105s window: 20
 ```
 
-### Example Image
+#### Example Image
 
 <img src="images/ouster_hz.png" width="400">
 
@@ -92,7 +92,7 @@ You should ensure your Ouster sensor is set to a mode that outputs at 10 Hz (suc
 A stable output rate of 10 Hz means each new point cloud is available every 0.1 seconds, which is suitable for most robotics applications requiring real-time 3D environment data.
 
 
-## Verify Imu
+### Verify Imu
 
 ```bash
 rostopic echo /ML/Ouster/Imu
@@ -103,7 +103,7 @@ rostopic hz /ML/Ouster/Imu
 ```
 
 
-### Sample Output of `rostopic hz /ML/Ouster/Imu`
+#### Sample Output of `rostopic hz /ML/Ouster/Imu`
 
 ```bash
 subscribed to [/ML/Ouster/Imu]
@@ -113,7 +113,7 @@ average rate: 99.905
     min: 0.009s max: 0.011s std dev: 0.00063s window: 20
 ```
 
-### Example Image
+#### Example Image
 
 <img src="images/imu_hz.png" width="400">
 

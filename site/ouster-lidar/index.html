@@ -532,14 +532,15 @@
   <a href="#for-imu-driver-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        For IMU Driver Setup
+        #For IMU Driver Setup
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="#For IMU Driver Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#changes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -562,6 +563,11 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#load-the-param-file" class="md-nav__link">
     <span class="md-ellipsis">
@@ -573,12 +579,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#launch-file" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -588,8 +589,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#note" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -599,8 +600,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#verfiy-ouster" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -638,8 +639,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#verify-imu" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -670,6 +671,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -885,14 +891,15 @@
   <a href="#for-imu-driver-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        For IMU Driver Setup
+        #For IMU Driver Setup
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="#For IMU Driver Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#changes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -915,6 +922,11 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#load-the-param-file" class="md-nav__link">
     <span class="md-ellipsis">
@@ -926,12 +938,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#launch-file" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -941,8 +948,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#note" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -952,8 +959,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#verfiy-ouster" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -991,8 +998,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#verify-imu" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1023,6 +1030,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1077,10 +1089,10 @@
 <h3 id="file">File</h3>
 <pre><code>/sensors_drivers/ouster-ros/param/params.yaml
 </code></pre>
-<h2 id="for-imu-driver-setup">For IMU Driver Setup</h2>
+<h2 id="for-imu-driver-setup">#For IMU Driver Setup</h2>
 <p>For details on configuring the IMU (Xsens), see <a href="../imu/">IMU Setup Guide</a>.</p>
-<h2 id="changes">Changes</h2>
-<h3 id="paramsyaml-configuration"><code>params.yaml</code> configuration</h3>
+<h3 id="changes">Changes</h3>
+<h4 id="paramsyaml-configuration"><code>params.yaml</code> configuration</h4>
 <pre><code class="language-yaml">ML:
   XsensMtiNode:
     port: /dev/imu_xsens   # Set Udev rule
@@ -1098,24 +1110,24 @@
 <h3 id="load-the-param-file">Load the Param File:</h3>
 <pre><code class="language-bash">rosparam load params.yaml
 </code></pre>
-<h2 id="launch-file">Launch File</h2>
+<h3 id="launch-file">Launch File</h3>
 <pre><code class="language-bash">roslaunch ouster-ros os.launch
 </code></pre>
-<h2 id="note">Note</h2>
+<h3 id="note">Note</h3>
 <p><code>os.launch</code> is a single self-contained file that sets up everything the Ouster sensor needs to run.</p>
-<h2 id="verfiy-ouster">Verfiy Ouster</h2>
+<h3 id="verfiy-ouster">Verfiy Ouster</h3>
 <pre><code class="language-bash">rostopic echo /ML/Ouster/Points
 </code></pre>
 <pre><code class="language-bash">rostopic hz /ML/Ouster/Points
 </code></pre>
-<h3 id="sample-output-of-rostopic-hz-mlousterpoints">Sample Output of <code>rostopic hz /ML/Ouster/Points</code></h3>
+<h4 id="sample-output-of-rostopic-hz-mlousterpoints">Sample Output of <code>rostopic hz /ML/Ouster/Points</code></h4>
 <pre><code class="language-bash">subscribed to [/ML/Ouster/Points]
 average rate: 10.000
     min: 0.099s max: 0.101s std dev: 0.00100s window: 10
 average rate: 10.001
     min: 0.099s max: 0.102s std dev: 0.00105s window: 20
 </code></pre>
-<h3 id="example-image">Example Image</h3>
+<h4 id="example-image">Example Image</h4>
 <p><img src="images/ouster_hz.png" width="400"></p>
 <p>The output of <code>rostopic hz /ML/Ouster/Points</code> shows how frequently the Ouster LiDAR point cloud messages are being published in ROS. The "average rate: 10.000" indicates that the LiDAR is outputting data at 10 Hz. This matches the expected rate for many Ouster sensors when set to common modes like 1024x10 (10 Hz). </p>
 <p>If the average rate is significantly lower than 10, it may indicate:
@@ -1124,19 +1136,19 @@ average rate: 10.001
 - System or network bottlenecks</p>
 <p>You should ensure your Ouster sensor is set to a mode that outputs at 10 Hz (such as <code>lidar_mode: 1024x10</code>, <code>512x10</code>, or similar) and that your network and ROS node are configured correctly. Achieving a consistent 10 Hz output is important for downstream perception, localization, and mapping applications that rely on regular sensor data. </p>
 <p>A stable output rate of 10 Hz means each new point cloud is available every 0.1 seconds, which is suitable for most robotics applications requiring real-time 3D environment data.</p>
-<h2 id="verify-imu">Verify Imu</h2>
+<h3 id="verify-imu">Verify Imu</h3>
 <pre><code class="language-bash">rostopic echo /ML/Ouster/Imu
 </code></pre>
 <pre><code class="language-bash">rostopic hz /ML/Ouster/Imu
 </code></pre>
-<h3 id="sample-output-of-rostopic-hz-mlousterimu">Sample Output of <code>rostopic hz /ML/Ouster/Imu</code></h3>
+<h4 id="sample-output-of-rostopic-hz-mlousterimu">Sample Output of <code>rostopic hz /ML/Ouster/Imu</code></h4>
 <pre><code class="language-bash">subscribed to [/ML/Ouster/Imu]
 average rate: 100.000
     min: 0.009s max: 0.011s std dev: 0.00055s window: 10
 average rate: 99.905
     min: 0.009s max: 0.011s std dev: 0.00063s window: 20
 </code></pre>
-<h3 id="example-image_1">Example Image</h3>
+<h4 id="example-image_1">Example Image</h4>
 <p><img src="images/imu_hz.png" width="400"></p>
 <p>The output of <code>rostopic hz /ML/Ouster/Imu</code> displays how frequently IMU messages from the Ouster LiDAR are published in ROS. An "average rate: 100.000" means 100 Hz update frequency, which is standard for Ouster IMU data streams. This ensures the sensor is producing data at the expected rate, crucial for time-synchronized localization, mapping, and sensor fusion.</p>
 <p>If the observed rate is much lower than 100 Hz, it could indicate:
