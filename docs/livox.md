@@ -50,8 +50,7 @@
 ```
 
  ```xml
- <!-- For More Than 1 LiDAR -->
- <arg name="multi_topic" default="0"/> <!-- Change to 1 for multiple LiDARs -->
+    <!-- For More Than 1 LiDAR -->
+    <arg name="multi_topic" default="0"/> <!-- Change to 1 for multiple LiDARs -->
  ```
-
  ---
