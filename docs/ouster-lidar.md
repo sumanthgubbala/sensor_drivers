@@ -32,6 +32,12 @@ ML:
         udp_dest: 127.0.0.1 #Set your Host IP
 ```
 
+### Load the Param File:
+
+```bash
+rosparam load params.yaml
+```
+
 ## Launch File
 
 ```bash
