@@ -16,6 +16,9 @@
 
 
 ## Changes 
+
+### `params.yaml` configuration
+
 ```yaml
 ML:
   XsensMtiNode:
