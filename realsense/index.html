@@ -517,6 +517,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -559,6 +561,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -567,10 +571,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#realsense-cameras" class="md-nav__link">
+  <a href="#image" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔷 RealSense Cameras
+        Image
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-parameters-to-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Parameters to Change
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolution-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolution Options
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-launch-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available Launch Files
       
     </span>
   </a>
@@ -629,6 +677,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -637,10 +687,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#realsense-cameras" class="md-nav__link">
+  <a href="#image" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔷 RealSense Cameras
+        Image
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-parameters-to-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Parameters to Change
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resolution-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolution Options
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-launch-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available Launch Files
       
     </span>
   </a>
@@ -664,41 +758,46 @@
 
 
 
-  <h1>RealSense</h1>
-
-<h3 id="realsense-cameras">🔷 RealSense Cameras</h3>
+<h1 id="realsense-cameras">RealSense Cameras</h1>
+<h2 id="image">Image</h2>
 <p><img width="20%" src="https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/3c5d6807aee4bccf8a693e04725f15f4/large.png"></p>
-<p><strong>File:</strong></p>
+<h2 id="file">File</h2>
 <pre><code>/sensors_drivers/realsense-ros/realsense2_camera/launch/rs_camera.launch
 </code></pre>
-<p><strong>Key Parameters to Change:</strong>
-- <code>serial_no</code>: Camera serial number (required for multi-camera setups)
-- <code>camera</code>: Namespace for camera topics (<code>default: camera</code>)
-- <code>enable_pointcloud</code>: Generate point cloud data (<code>set to true for navigation</code>)
-- <code>enable_depth</code>: Enable depth stream (<code>default: true</code>)
-- <code>enable_color</code>: Enable RGB color stream (<code>default: true</code>)
-- <code>enable_infra1/enable_infra2</code>: Enable infrared streams for stereo vision
-- <code>depth_width/depth_height</code>: Depth resolution (<code>default: -1 for auto</code>)
-- <code>color_width/color_height</code>: RGB resolution (<code>default: -1 for auto</code>)
-- <code>depth_fps/color_fps</code>: Frame rates (<code>30/60</code> fps typical)
-- <code>enable_gyro/enable_accel</code>: Enable IMU data (set to true for odometry)
-- <code>publish_tf</code>: Publish camera TF transforms (<code>default: true</code>)
-- <code>tf_prefix</code>: Prefix for TF frames (<code>default: realsense</code>)
-- <code>enable_sync</code>: Enable camera synchronization (<code>default: false</code>)
-- <code>align_depth</code>: Align depth frames to color camera (<code>default: false</code>)</p>
-<p><strong>Resolution Options:</strong>
-- 640x480 (VGA)
-- 848x480 (Wide VGA)
-- 1280x720 (HD)
-- 1920x1080 (Full HD)</p>
-<p><strong>Available Launch Files:</strong>
-- <code>rs_camera.launch</code>: Basic camera launch
-- <code>rs_d435_camera_with_model.launch</code>: D435 with URDF model and RViz
-- <code>rs_t265.launch</code>: T265 tracking camera only
-- <code>rs_d400_and_t265.launch</code>: Combined D400 + T265 setup
-- <code>rs_multiple_devices.launch</code>: Multi-camera setup
-- <code>rs_aligned_depth.launch</code>: Depth aligned to color frame
-- <code>demo_pointcloud.launch</code>: Point cloud visualization demo</p>
+<h2 id="key-parameters-to-change">Key Parameters to Change</h2>
+<ul>
+<li><code>serial_no</code>: Camera serial number (required for multi-camera setups)</li>
+<li><code>camera</code>: Namespace for camera topics (<code>default: camera</code>)</li>
+<li><code>enable_pointcloud</code>: Generate point cloud data (<code>set to true for navigation</code>)</li>
+<li><code>enable_depth</code>: Enable depth stream (<code>default: true</code>)</li>
+<li><code>enable_color</code>: Enable RGB color stream (<code>default: true</code>)</li>
+<li><code>enable_infra1/enable_infra2</code>: Enable infrared streams for stereo vision</li>
+<li><code>depth_width/depth_height</code>: Depth resolution (<code>default: -1 for auto</code>)</li>
+<li><code>color_width/color_height</code>: RGB resolution (<code>default: -1 for auto</code>)</li>
+<li><code>depth_fps/color_fps</code>: Frame rates (<code>30/60</code> fps typical)</li>
+<li><code>enable_gyro/enable_accel</code>: Enable IMU data (set to true for odometry)</li>
+<li><code>publish_tf</code>: Publish camera TF transforms (<code>default: true</code>)</li>
+<li><code>tf_prefix</code>: Prefix for TF frames (<code>default: realsense</code>)</li>
+<li><code>enable_sync</code>: Enable camera synchronization (<code>default: false</code>)</li>
+<li><code>align_depth</code>: Align depth frames to color camera (<code>default: false</code>)</li>
+</ul>
+<h2 id="resolution-options">Resolution Options</h2>
+<ul>
+<li>640x480 (VGA)</li>
+<li>848x480 (Wide VGA)</li>
+<li>1280x720 (HD)</li>
+<li>1920x1080 (Full HD)</li>
+</ul>
+<h2 id="available-launch-files">Available Launch Files</h2>
+<ul>
+<li><code>rs_camera.launch</code>: Basic camera launch</li>
+<li><code>rs_d435_camera_with_model.launch</code>: D435 with URDF model and RViz</li>
+<li><code>rs_t265.launch</code>: T265 tracking camera only</li>
+<li><code>rs_d400_and_t265.launch</code>: Combined D400 + T265 setup</li>
+<li><code>rs_multiple_devices.launch</code>: Multi-camera setup</li>
+<li><code>rs_aligned_depth.launch</code>: Depth aligned to color frame</li>
+<li><code>demo_pointcloud.launch</code>: Point cloud visualization demo</li>
+</ul>
 
 
 
