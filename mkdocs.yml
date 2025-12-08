@@ -1,0 +1,16 @@
+site_name: Sensor Drivers Documentation
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - content.code.copy
+
+nav:
+  - Sensor Drivers: index.md
+  - Livox: livox.md
+  - Ouster Lidar: ouster-lidar.md
+  - SICK Sensor: sick-sensor.md
+  - IMU: imu.md
+  - RealSense: realsense.md
+  - u-blox F9P: u-blox.md
