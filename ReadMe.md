@@ -1,5 +1,3 @@
-**| [Overview](./README.md) | **Page 1** | [Page 2](./LivoxLidar.md) |**
-
 # Sensor Drivers for Autonomous Vehicle (ROS Noetic)
 
 This folder contains all sensor drivers for an autonomous vehicle running **ROS Noetic (Ubuntu 20.04)**.
