@@ -9,7 +9,7 @@
 /sensors_drivers/livox_ros_driver2/config/MID360_config.json
 ```
 
-## Change:
+## Changes:
 
 ```json
   "MID360": {
@@ -50,7 +50,7 @@
 ```
 /sensors_drivers/livox_ros_driver2/launch_ROS1/msg_MID360.launch
 ```
-### Changed
+### Changes:
 ```xml
     <!-- For More Than 1 LiDAR -->
     <arg name="multi_topic" default="0"/> <!-- Change to 1 for multiple LiDARs -->
