@@ -490,6 +490,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -532,6 +534,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -540,13 +544,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#xsens-imu" class="md-nav__link">
+  <a href="#image" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔷 Xsens IMU
+        Image
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-find-device-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Find device info
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-set-up-udev-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Set up udev rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-apply-ruless" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Apply rulesS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -629,6 +683,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -637,13 +693,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#xsens-imu" class="md-nav__link">
+  <a href="#image" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔷 Xsens IMU
+        Image
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-find-device-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Find device info
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-set-up-udev-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Set up udev rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-apply-ruless" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Apply rulesS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -664,25 +770,24 @@
 
 
 
-  <h1>IMU</h1>
-
 <p><a name="xsens-imu"></a></p>
-<h3 id="xsens-imu">🔷 Xsens IMU</h3>
+<h1 id="xsens-imu">Xsens IMU</h1>
+<h2 id="image">Image</h2>
 <p><img width="20%" src="https://www.mouser.in/images/marketingid/2023/img/109066689.png"></p>
-<p><strong>Changes :</strong></p>
-<p><strong>1. Find device info:</strong></p>
+<h2 id="changes">Changes</h2>
+<h3 id="1-find-device-info">1. Find device info</h3>
 <pre><code class="language-bash">dmesg --follow
 </code></pre>
 <blockquote>
 <p>Run this, then plug in your Xsens IMU. You'll see vendor ID, product ID, serial number, and device path (<code>like ttyACM0</code>). Note these values for reference.</p>
 </blockquote>
-<p><strong>2. Set up udev rules:</strong></p>
+<h3 id="2-set-up-udev-rules">2. Set up udev rules</h3>
 <pre><code class="language-bash">sudo nano /etc/udev/rules.d/99-xsens-imu.rules
 </code></pre>
 <p>Add this line:</p>
 <pre><code>SUBSYSTEM==&quot;tty&quot;, ATTRS{idVendor}==&quot;2639&quot;, ACTION==&quot;add&quot;, GROUP=&quot;dialout&quot;, MODE=&quot;0660&quot;
 </code></pre>
-<p><strong>3. Apply rules:</strong></p>
+<h3 id="3-apply-ruless">3. Apply rulesS</h3>
 <pre><code class="language-bash">sudo udevadm control --reload-rules &amp;&amp; sudo udevadm trigger
 sudo usermod -a -G dialout $USER
 </code></pre>
