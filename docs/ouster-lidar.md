@@ -38,8 +38,73 @@ ML:
 roslaunch ouster-ros os.launch
 ```
 
-## Note:
+## Note
  `os.launch` is a single self-contained file that sets up everything the Ouster sensor needs to run.
+
+
+### Verfiy
+
+```bash
+rostopic echo /ML/Ouster/Points
+```
+
+```bash
+rostopic hz /ML/Ouster/Points
+```
+
+
+#### Sample Output of `rostopic hz /ML/Ouster/Points`
+
+```bash
+subscribed to [/ML/Ouster/Points]
+average rate: 10.000
+    min: 0.099s max: 0.101s std dev: 0.00100s window: 10
+average rate: 10.001
+    min: 0.099s max: 0.102s std dev: 0.00105s window: 20
+```
+
+The output of `rostopic hz /ML/Ouster/Points` shows how frequently the Ouster LiDAR point cloud messages are being published in ROS. The "average rate: 10.000" indicates that the LiDAR is outputting data at 10 Hz. This matches the expected rate for many Ouster sensors when set to common modes like 1024x10 (10 Hz). 
+
+If the average rate is significantly lower than 10, it may indicate:
+- Network or configuration issues with the LiDAR or computer
+- ROS node or launch parameter misconfiguration
+- System or network bottlenecks
+
+You should ensure your Ouster sensor is set to a mode that outputs at 10 Hz (such as `lidar_mode: 1024x10`, `512x10`, or similar) and that your network and ROS node are configured correctly. Achieving a consistent 10 Hz output is important for downstream perception, localization, and mapping applications that rely on regular sensor data. 
+
+A stable output rate of 10 Hz means each new point cloud is available every 0.1 seconds, which is suitable for most robotics applications requiring real-time 3D environment data.
+
+
+### Verify
+
+```bash
+rostopic echo /ML/Ouster/Imu
+```
+
+```bash
+rostopic hz /ML/Ouster/Imu
+```
+
+#### sample ouput for rostopic hz /ML/Ouster/Imu
+#### Sample Output of `rostopic hz /ML/Ouster/Imu`
+
+```bash
+subscribed to [/ML/Ouster/Imu]
+average rate: 100.000
+    min: 0.009s max: 0.011s std dev: 0.00055s window: 10
+average rate: 99.905
+    min: 0.009s max: 0.011s std dev: 0.00063s window: 20
+```
+
+The output of `rostopic hz /ML/Ouster/Imu` displays how frequently IMU messages from the Ouster LiDAR are published in ROS. An "average rate: 100.000" means 100 Hz update frequency, which is standard for Ouster IMU data streams. This ensures the sensor is producing data at the expected rate, crucial for time-synchronized localization, mapping, and sensor fusion.
+
+If the observed rate is much lower than 100 Hz, it could indicate:
+- Link or configuration problems between sensor and host
+- ROS node or parameter misconfiguration
+- System/network bottlenecks
+
+A consistent IMU rate of 100 Hz (new message every 0.01 seconds) is typical in robotics for accurate real-time estimation. Check your sensor and configurations if rates are not as expected. 
+
 
 
 

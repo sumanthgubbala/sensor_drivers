@@ -548,10 +548,83 @@
   <a href="#note" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Note:
+        Note
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Note">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verfiy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verfiy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verfiy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-output-of-rostopic-hz-mlousterpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Output of rostopic hz /ML/Ouster/Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-ouput-for-rostopic-hz-mlousterimu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sample ouput for rostopic hz /ML/Ouster/Imu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-output-of-rostopic-hz-mlousterimu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Output of rostopic hz /ML/Ouster/Imu
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -778,10 +851,83 @@
   <a href="#note" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Note:
+        Note
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Note">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verfiy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verfiy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verfiy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-output-of-rostopic-hz-mlousterpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Output of rostopic hz /ML/Ouster/Points
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verify">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sample-ouput-for-rostopic-hz-mlousterimu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sample ouput for rostopic hz /ML/Ouster/Imu
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-output-of-rostopic-hz-mlousterimu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample Output of rostopic hz /ML/Ouster/Imu
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -850,8 +996,46 @@
 <h2 id="launch-file">Launch File</h2>
 <pre><code class="language-bash">roslaunch ouster-ros os.launch
 </code></pre>
-<h2 id="note">Note:</h2>
+<h2 id="note">Note</h2>
 <p><code>os.launch</code> is a single self-contained file that sets up everything the Ouster sensor needs to run.</p>
+<h3 id="verfiy">Verfiy</h3>
+<pre><code class="language-bash">rostopic echo /ML/Ouster/Points
+</code></pre>
+<pre><code class="language-bash">rostopic hz /ML/Ouster/Points
+</code></pre>
+<h4 id="sample-output-of-rostopic-hz-mlousterpoints">Sample Output of <code>rostopic hz /ML/Ouster/Points</code></h4>
+<pre><code class="language-bash">subscribed to [/ML/Ouster/Points]
+average rate: 10.000
+    min: 0.099s max: 0.101s std dev: 0.00100s window: 10
+average rate: 10.001
+    min: 0.099s max: 0.102s std dev: 0.00105s window: 20
+</code></pre>
+<p>The output of <code>rostopic hz /ML/Ouster/Points</code> shows how frequently the Ouster LiDAR point cloud messages are being published in ROS. The "average rate: 10.000" indicates that the LiDAR is outputting data at 10 Hz. This matches the expected rate for many Ouster sensors when set to common modes like 1024x10 (10 Hz). </p>
+<p>If the average rate is significantly lower than 10, it may indicate:
+- Network or configuration issues with the LiDAR or computer
+- ROS node or launch parameter misconfiguration
+- System or network bottlenecks</p>
+<p>You should ensure your Ouster sensor is set to a mode that outputs at 10 Hz (such as <code>lidar_mode: 1024x10</code>, <code>512x10</code>, or similar) and that your network and ROS node are configured correctly. Achieving a consistent 10 Hz output is important for downstream perception, localization, and mapping applications that rely on regular sensor data. </p>
+<p>A stable output rate of 10 Hz means each new point cloud is available every 0.1 seconds, which is suitable for most robotics applications requiring real-time 3D environment data.</p>
+<h3 id="verify">Verify</h3>
+<pre><code class="language-bash">rostopic echo /ML/Ouster/Imu
+</code></pre>
+<pre><code class="language-bash">rostopic hz /ML/Ouster/Imu
+</code></pre>
+<h4 id="sample-ouput-for-rostopic-hz-mlousterimu">sample ouput for rostopic hz /ML/Ouster/Imu</h4>
+<h4 id="sample-output-of-rostopic-hz-mlousterimu">Sample Output of <code>rostopic hz /ML/Ouster/Imu</code></h4>
+<pre><code class="language-bash">subscribed to [/ML/Ouster/Imu]
+average rate: 100.000
+    min: 0.009s max: 0.011s std dev: 0.00055s window: 10
+average rate: 99.905
+    min: 0.009s max: 0.011s std dev: 0.00063s window: 20
+</code></pre>
+<p>The output of <code>rostopic hz /ML/Ouster/Imu</code> displays how frequently IMU messages from the Ouster LiDAR are published in ROS. An "average rate: 100.000" means 100 Hz update frequency, which is standard for Ouster IMU data streams. This ensures the sensor is producing data at the expected rate, crucial for time-synchronized localization, mapping, and sensor fusion.</p>
+<p>If the observed rate is much lower than 100 Hz, it could indicate:
+- Link or configuration problems between sensor and host
+- ROS node or parameter misconfiguration
+- System/network bottlenecks</p>
+<p>A consistent IMU rate of 100 Hz (new message every 0.01 seconds) is typical in robotics for accurate real-time estimation. Check your sensor and configurations if rates are not as expected. </p>
 <h2 id="key-parameters-to-set">Key Parameters to Set</h2>
 <ul>
 <li><code>sensor_hostname</code>: IP address of the Ouster LiDAR sensor</li>
