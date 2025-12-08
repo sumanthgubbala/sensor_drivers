@@ -49,8 +49,8 @@
 /sensors_drivers/livox_ros_driver2/launch_ROS1/msg_MID360.launch
 ```
 
- ```xml
+```xml
     <!-- For More Than 1 LiDAR -->
     <arg name="multi_topic" default="0"/> <!-- Change to 1 for multiple LiDARs -->
- ```
+```
  ---
