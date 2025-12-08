@@ -41,7 +41,7 @@
   ]
 ```
 
-### >**Note:**
+### **Note:**
  For multiple Livox LiDARs, copy and paste the `MID360` and `lidar_configs` sections, then change the IP address of each LiDAR according to your setup.
 
 **File:**
