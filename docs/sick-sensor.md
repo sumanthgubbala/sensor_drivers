@@ -1,15 +1,17 @@
 
-## SICK 2D LiDAR
+# SICK 2D LiDAR
+
+## Image
 
 <img width="20%" src="https://cdn.sick.com/media/pim/5/15/215/IM0085215.png"/>
 
-**File:**
+## File
 
 ```
 /sensors_drivers/sick_safetyscanners/launch/sick_safetyscanners.launch
 ```
 
-**Set:**
+## Set
 
 ```xml
     <arg name="Right_Sensor_IP"  default="169.254.X.XXX" />  <!-- Enter SICK LiDAR IP -->
