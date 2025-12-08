@@ -463,6 +463,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#file" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -482,14 +493,36 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Change:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#note" class="md-nav__link">
     <span class="md-ellipsis">
       
         Note:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Note:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changed
       
     </span>
   </a>
@@ -671,6 +704,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#file" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -690,14 +734,36 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Change:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#note" class="md-nav__link">
     <span class="md-ellipsis">
       
         Note:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Note:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changed
       
     </span>
   </a>
@@ -727,11 +793,12 @@
 
 
 <h1 id="livox-lidar">Livox LiDAR</h1>
+<h2 id="image">Image</h2>
 <p><img width="20%" src="https://www.livoxtech.com/dps/2d9e037e6d457ef7ffec037f7d16dcf8.png" /></p>
-<h2 id="file"><strong>File:</strong></h2>
+<h2 id="file">File:</h2>
 <pre><code>/sensors_drivers/livox_ros_driver2/config/MID360_config.json
 </code></pre>
-<h2 id="change"><strong>Change:</strong></h2>
+<h2 id="change">Change:</h2>
 <pre><code class="language-json">  &quot;MID360&quot;: {
     &quot;host_net_info&quot; : {
       &quot;cmd_data_ip&quot; : &quot;192.168.X.XX&quot;, //Enter Host IP Here
@@ -762,11 +829,12 @@
     }
   ]
 </code></pre>
-<h3 id="note"><strong>Note:</strong></h3>
+<h2 id="note">Note:</h2>
 <p>For multiple Livox LiDARs, copy and paste the <code>MID360</code> and <code>lidar_configs</code> sections, then change the IP address of each LiDAR according to your setup.</p>
-<p><strong>File:</strong></p>
+<h3 id="file_1">File:</h3>
 <pre><code>/sensors_drivers/livox_ros_driver2/launch_ROS1/msg_MID360.launch
 </code></pre>
+<h3 id="changed">Changed</h3>
 <pre><code class="language-xml">    &lt;!-- For More Than 1 LiDAR --&gt;
     &lt;arg name=&quot;multi_topic&quot; default=&quot;0&quot;/&gt; &lt;!-- Change to 1 for multiple LiDARs --&gt;
 </code></pre>
