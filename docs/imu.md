@@ -5,7 +5,9 @@
 ## Image
 <img width="20%" src="https://www.mouser.in/images/marketingid/2023/img/109066689.png">
 
-## Changes 
+
+## Configuration and Setup
+
 
 ### 1. Find device info
 

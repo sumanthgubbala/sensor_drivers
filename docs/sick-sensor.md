@@ -5,13 +5,18 @@
 
 <img width="20%" src="https://cdn.sick.com/media/pim/5/15/215/IM0085215.png"/>
 
-## File
+## Configuration and Setup
+
+### File
 
 ```
 /sensors_drivers/sick_safetyscanners/launch/sick_safetyscanners.launch
 ```
 
-## Set
+## Setup
+
+### SICK Sensor Launch and IP Configuration
+
 
 ```xml
     <arg name="Right_Sensor_IP"  default="169.254.X.XXX" />  <!-- Enter SICK LiDAR IP -->

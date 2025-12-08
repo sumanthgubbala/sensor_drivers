@@ -5,8 +5,10 @@
 
 <img width="20%" src="https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/3c5d6807aee4bccf8a693e04725f15f4/large.png">
 
-## File
 
+## Configuration and Setup
+
+### File
 ```
 /sensors_drivers/realsense-ros/realsense2_camera/launch/rs_camera.launch
 ```

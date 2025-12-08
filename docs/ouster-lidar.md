@@ -5,14 +5,17 @@
 
 
 
-## File
+## Configuration and Setup
+
+### File
 ```
 /sensors_drivers/ouster-ros/param/params.yaml
 ```
 
 
-## For IMU Driver 
-*See [Xsens IMU](#-xsens-imu) section below for setup instructions*
+## For IMU Driver Setup
+
+For details on configuring the IMU (Xsens), see [IMU Setup Guide](imu.md).
 
 
 ## Changes 

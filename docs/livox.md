@@ -3,13 +3,19 @@
 ## Image
 <img width="20%" src="https://www.livoxtech.com/dps/2d9e037e6d457ef7ffec037f7d16dcf8.png" />
 
-## File
+
+## Configuration and Setup
+
+### File
 
 ```
 /sensors_drivers/livox_ros_driver2/config/MID360_config.json
 ```
 
 ## Changes
+
+### Example Livox MID360_config.json
+
 
 ```json
   "MID360": {
@@ -50,7 +56,10 @@
 ```
 /sensors_drivers/livox_ros_driver2/launch_ROS1/msg_MID360.launch
 ```
-### Changes
+
+### Setup for multiple LiDARs
+
+
 ```xml
     <!-- For More Than 1 LiDAR -->
     <arg name="multi_topic" default="0"/> <!-- Change to 1 for multiple LiDARs -->
