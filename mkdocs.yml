@@ -29,4 +29,5 @@ nav:
   - u-blox F9P: u-blox.md
 
 plugins:
+  - search
   - glightbox
