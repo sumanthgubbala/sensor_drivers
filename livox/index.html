@@ -474,6 +474,18 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configuration-and-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration and Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration and Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#file" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -481,6 +493,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -492,6 +509,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-livox-mid360_configjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Livox MID360_config.json
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -519,10 +553,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#changes_1" class="md-nav__link">
+  <a href="#setup-for-multiple-lidars" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Changes
+        Setup for multiple LiDARs
       
     </span>
   </a>
@@ -715,6 +749,18 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configuration-and-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration and Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration and Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#file" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -722,6 +768,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -733,6 +784,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-livox-mid360_configjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Livox MID360_config.json
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -760,10 +828,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#changes_1" class="md-nav__link">
+  <a href="#setup-for-multiple-lidars" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Changes
+        Setup for multiple LiDARs
       
     </span>
   </a>
@@ -795,10 +863,12 @@
 <h1 id="livox-lidar">Livox LiDAR</h1>
 <h2 id="image">Image</h2>
 <p><img width="20%" src="https://www.livoxtech.com/dps/2d9e037e6d457ef7ffec037f7d16dcf8.png" /></p>
-<h2 id="file">File</h2>
+<h2 id="configuration-and-setup">Configuration and Setup</h2>
+<h3 id="file">File</h3>
 <pre><code>/sensors_drivers/livox_ros_driver2/config/MID360_config.json
 </code></pre>
 <h2 id="changes">Changes</h2>
+<h3 id="example-livox-mid360_configjson">Example Livox MID360_config.json</h3>
 <pre><code class="language-json">  &quot;MID360&quot;: {
     &quot;host_net_info&quot; : {
       &quot;cmd_data_ip&quot; : &quot;192.168.X.XX&quot;, //Enter Host IP Here
@@ -834,7 +904,7 @@
 <h3 id="file_1">File</h3>
 <pre><code>/sensors_drivers/livox_ros_driver2/launch_ROS1/msg_MID360.launch
 </code></pre>
-<h3 id="changes_1">Changes</h3>
+<h3 id="setup-for-multiple-lidars">Setup for multiple LiDARs</h3>
 <pre><code class="language-xml">    &lt;!-- For More Than 1 LiDAR --&gt;
     &lt;arg name=&quot;multi_topic&quot; default=&quot;0&quot;/&gt; &lt;!-- Change to 1 for multiple LiDARs --&gt;
 </code></pre>
