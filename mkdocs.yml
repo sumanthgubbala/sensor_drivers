@@ -1,6 +1,10 @@
 site_name: Sensor Drivers Documentation
 theme:
   name: material
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - content.code.copy
   palette:
     - scheme: slate
       toggle:
