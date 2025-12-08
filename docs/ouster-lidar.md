@@ -42,7 +42,7 @@ roslaunch ouster-ros os.launch
  `os.launch` is a single self-contained file that sets up everything the Ouster sensor needs to run.
 
 
-### Verfiy
+### Verfiy Ouster
 
 ```bash
 rostopic echo /ML/Ouster/Points
@@ -75,7 +75,7 @@ You should ensure your Ouster sensor is set to a mode that outputs at 10 Hz (suc
 A stable output rate of 10 Hz means each new point cloud is available every 0.1 seconds, which is suitable for most robotics applications requiring real-time 3D environment data.
 
 
-### Verify
+### Verify Imu
 
 ```bash
 rostopic echo /ML/Ouster/Imu

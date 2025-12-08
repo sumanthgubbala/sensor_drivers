@@ -557,15 +557,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#verfiy" class="md-nav__link">
+  <a href="#verfiy-ouster" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verfiy
+        Verfiy Ouster
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Verfiy">
+    <nav class="md-nav" aria-label="Verfiy Ouster">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -585,15 +585,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#verify" class="md-nav__link">
+  <a href="#verify-imu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verify
+        Verify Imu
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Verify">
+    <nav class="md-nav" aria-label="Verify Imu">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -860,15 +860,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#verfiy" class="md-nav__link">
+  <a href="#verfiy-ouster" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verfiy
+        Verfiy Ouster
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Verfiy">
+    <nav class="md-nav" aria-label="Verfiy Ouster">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -888,15 +888,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#verify" class="md-nav__link">
+  <a href="#verify-imu" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verify
+        Verify Imu
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Verify">
+    <nav class="md-nav" aria-label="Verify Imu">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -998,7 +998,7 @@
 </code></pre>
 <h2 id="note">Note</h2>
 <p><code>os.launch</code> is a single self-contained file that sets up everything the Ouster sensor needs to run.</p>
-<h3 id="verfiy">Verfiy</h3>
+<h3 id="verfiy-ouster">Verfiy Ouster</h3>
 <pre><code class="language-bash">rostopic echo /ML/Ouster/Points
 </code></pre>
 <pre><code class="language-bash">rostopic hz /ML/Ouster/Points
@@ -1017,7 +1017,7 @@ average rate: 10.001
 - System or network bottlenecks</p>
 <p>You should ensure your Ouster sensor is set to a mode that outputs at 10 Hz (such as <code>lidar_mode: 1024x10</code>, <code>512x10</code>, or similar) and that your network and ROS node are configured correctly. Achieving a consistent 10 Hz output is important for downstream perception, localization, and mapping applications that rely on regular sensor data. </p>
 <p>A stable output rate of 10 Hz means each new point cloud is available every 0.1 seconds, which is suitable for most robotics applications requiring real-time 3D environment data.</p>
-<h3 id="verify">Verify</h3>
+<h3 id="verify-imu">Verify Imu</h3>
 <pre><code class="language-bash">rostopic echo /ML/Ouster/Imu
 </code></pre>
 <pre><code class="language-bash">rostopic hz /ML/Ouster/Imu
