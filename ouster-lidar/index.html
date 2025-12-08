@@ -436,6 +436,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -478,6 +480,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -486,10 +490,87 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ouster-lidar" class="md-nav__link">
+  <a href="#image" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ouster LiDAR
+        Image
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-imu-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For IMU Driver
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launch-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Launch File
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-parameters-to-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Parameters to Set
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Parameters
       
     </span>
   </a>
@@ -629,6 +710,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -637,10 +720,87 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ouster-lidar" class="md-nav__link">
+  <a href="#image" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ouster LiDAR
+        Image
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-imu-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For IMU Driver
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launch-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Launch File
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-parameters-to-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Parameters to Set
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Parameters
       
     </span>
   </a>
@@ -664,15 +824,15 @@
 
 
 
-  <h1>Ouster Lidar</h1>
-
-<h2 id="ouster-lidar">Ouster LiDAR</h2>
+<h1 id="ouster-lidar">Ouster LiDAR</h1>
+<h2 id="image">Image</h2>
 <p><img width="20%" src="https://cdn.prod.website-files.com/64d23a301670476693286174/65511136864d515f87336dd6_ouster_os1_d9caed355c.png"></p>
-<p><strong>File:</strong></p>
+<h2 id="file">File</h2>
 <pre><code>/sensors_drivers/ouster-ros/param/params.yaml
 </code></pre>
-<p><strong>For IMU Driver:</strong>
-<em>See <a href="#-xsens-imu">Xsens IMU</a> section below for setup instructions</em></p>
+<h2 id="for-imu-driver">For IMU Driver</h2>
+<p><em>See <a href="#-xsens-imu">Xsens IMU</a> section below for setup instructions</em></p>
+<h2 id="changes">Changes</h2>
 <pre><code class="language-yaml">ML:
   XsensMtiNode:
     port: /dev/imu_xsens   # Set Udev rule
@@ -687,28 +847,31 @@
         metadata: /home/user/.ros/os-122403001858.local.json # Change user and LiDAR IP
         udp_dest: 127.0.0.1 #Set your Host IP
 </code></pre>
-<p><strong>Launch File:</strong></p>
+<h2 id="launch-file">Launch File</h2>
 <pre><code class="language-bash">roslaunch ouster-ros os.launch
 </code></pre>
-<blockquote>
-<p><strong>Note:</strong> <code>os.launch</code> is a single self-contained file that sets up everything the Ouster sensor needs to run.</p>
-</blockquote>
-<p><strong>Key Parameters to Set:</strong>
-- <code>sensor_hostname</code>: IP address of the Ouster LiDAR sensor
-- <code>udp_dest</code>: IP address of the host computer receiving data
-- <code>lidar_port</code>: UDP port for lidar data (default: 7502)
-- <code>imu_port</code>: UDP port for IMU data (default: 7503)
-- <code>lidar_mode</code>: Resolution and rate, e.g., 512x10, 512x20, 1024x10, 1024x20, 2048x10, 4096x5
-- <code>timestamp_mode</code>: TIME_FROM_ROS_TIME, TIME_FROM_INTERNAL_OSC, TIME_FROM_SYNC_PULSE_IN, TIME_FROM_PTP_1588
-- <code>viz</code>: Set to true to launch RViz visualization (default: true)</p>
-<p><strong>Optional Parameters:</strong>
-- <code>tf_prefix</code>: Namespace for TF transforms
-- <code>sensor_frame</code>: TF frame name for sensor (default: os_sensor)
-- <code>lidar_frame</code>: TF frame name for lidar (default: os_lidar)
-- <code>imu_frame</code>: TF frame name for IMU (default: os_imu)
-- <code>proc_mask</code>: Processing mask (default: IMG|PCL|IMU|SCAN|TLM)
-- <code>organized</code>: Generate organized point cloud (default: true)
-- <code>destagger</code>: Enable point cloud destaggering (default: true)</p>
+<h2 id="note">Note:</h2>
+<p><code>os.launch</code> is a single self-contained file that sets up everything the Ouster sensor needs to run.</p>
+<h2 id="key-parameters-to-set">Key Parameters to Set</h2>
+<ul>
+<li><code>sensor_hostname</code>: IP address of the Ouster LiDAR sensor</li>
+<li><code>udp_dest</code>: IP address of the host computer receiving data</li>
+<li><code>lidar_port</code>: UDP port for lidar data (default: 7502)</li>
+<li><code>imu_port</code>: UDP port for IMU data (default: 7503)</li>
+<li><code>lidar_mode</code>: Resolution and rate, e.g., 512x10, 512x20, 1024x10, 1024x20, 2048x10, 4096x5</li>
+<li><code>timestamp_mode</code>: TIME_FROM_ROS_TIME, TIME_FROM_INTERNAL_OSC, TIME_FROM_SYNC_PULSE_IN, TIME_FROM_PTP_1588</li>
+<li><code>viz</code>: Set to true to launch RViz visualization (default: true)</li>
+</ul>
+<h2 id="optional-parameters">Optional Parameters</h2>
+<ul>
+<li><code>tf_prefix</code>: Namespace for TF transforms</li>
+<li><code>sensor_frame</code>: TF frame name for sensor (default: os_sensor)</li>
+<li><code>lidar_frame</code>: TF frame name for lidar (default: os_lidar)</li>
+<li><code>imu_frame</code>: TF frame name for IMU (default: os_imu)</li>
+<li><code>proc_mask</code>: Processing mask (default: IMG|PCL|IMU|SCAN|TLM)</li>
+<li><code>organized</code>: Generate organized point cloud (default: true)</li>
+<li><code>destagger</code>: Enable point cloud destaggering (default: true)</li>
+</ul>
 <hr />
 
 
