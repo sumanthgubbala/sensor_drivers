@@ -27,3 +27,6 @@ nav:
   - IMU: imu.md
   - RealSense: realsense.md
   - u-blox F9P: u-blox.md
+
+plugins:
+  - glightbox

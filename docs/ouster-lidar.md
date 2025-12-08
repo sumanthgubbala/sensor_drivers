@@ -77,7 +77,7 @@ average rate: 10.001
 
 #### Example Image
 
-<img src="images/ouster_hz.png" width="400">
+![Ouster LiDAR Points Hz Example](images/ouster_hz.png)
 
 
 The output of `rostopic hz /ML/Ouster/Points` shows how frequently the Ouster LiDAR point cloud messages are being published in ROS. The "average rate: 10.000" indicates that the LiDAR is outputting data at 10 Hz. This matches the expected rate for many Ouster sensors when set to common modes like 1024x10 (10 Hz). 
@@ -115,7 +115,8 @@ average rate: 99.905
 
 #### Example Image
 
-<img src="images/imu_hz.png" width="400">
+![Imu Hz Example](images/imu_hz.png)
+
 
 
 The output of `rostopic hz /ML/Ouster/Imu` displays how frequently IMU messages from the Ouster LiDAR are published in ROS. An "average rate: 100.000" means 100 Hz update frequency, which is standard for Ouster IMU data streams. This ensures the sensor is producing data at the expected rate, crucial for time-synchronized localization, mapping, and sensor fusion.
