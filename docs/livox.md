@@ -1,13 +1,13 @@
 # Livox LiDAR
 <img width="20%" src="https://www.livoxtech.com/dps/2d9e037e6d457ef7ffec037f7d16dcf8.png" />
 
-**File:**
+## **File:**
 
 ```
 /sensors_drivers/livox_ros_driver2/config/MID360_config.json
 ```
 
-**Change:**
+## **Change:**
 
 ```json
   "MID360": {
@@ -41,7 +41,7 @@
   ]
 ```
 
->**Note:**
+### >**Note:**
  For multiple Livox LiDARs, copy and paste the `MID360` and `lidar_configs` sections, then change the IP address of each LiDAR according to your setup.
 
 **File:**
